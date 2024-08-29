@@ -13,20 +13,20 @@ public class Main {
             System.out.println("4. Check Balance");
             System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
-
             int choice = scanner.nextInt();
-            scanner.nextLine();
+            scanner.nextLine(); // Consume newline
 
             switch (choice) {
                 case 1:
                     System.out.print("Enter Account Number: ");
                     String accountNumber = scanner.nextLine();
-                    System.out.print("Enter Account Holder name: ");
-                    String accountName = scanner.nextLine();
-                    System.out.print("Enter Inital Balance: ");
-                    double initalBalance = scanner.nextDouble();
-                    bank.createAccount(accountNumber, accountName, initalBalance);
+                    System.out.print("Enter Account Holder Name: ");
+                    String accountHolderName = scanner.nextLine();
+                    System.out.print("Enter Initial Balance: ");
+                    double initialBalance = scanner.nextDouble();
+                    bank.createAccount(accountNumber, accountHolderName, initialBalance);
                     break;
+
                 case 2:
                     System.out.print("Enter Account Number: ");
                     accountNumber = scanner.nextLine();
@@ -34,22 +34,26 @@ public class Main {
                     double depositAmount = scanner.nextDouble();
                     bank.deposit(accountNumber, depositAmount);
                     break;
+
                 case 3:
                     System.out.print("Enter Account Number: ");
                     accountNumber = scanner.nextLine();
-                    System.out.print("Enter Withdraw Amount: ");
-                    double withdrawlAmount = scanner.nextDouble();
-                    bank.withdraw(accountNumber, withdrawlAmount);
+                    System.out.print("Enter Withdrawal Amount: ");
+                    double withdrawalAmount = scanner.nextDouble();
+                    bank.withdraw(accountNumber, withdrawalAmount);
                     break;
+
                 case 4:
                     System.out.print("Enter Account Number: ");
                     accountNumber = scanner.nextLine();
                     bank.checkBalance(accountNumber);
                     break;
+
                 case 5:
                     System.out.println("Exiting...");
                     scanner.close();
                     return;
+
                 default:
                     System.out.println("Invalid choice. Please try again.");
                     break;

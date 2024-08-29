@@ -3,10 +3,10 @@ public class BankAccount {
     private String accountHolderName;
     private double balance;
 
-    public BankAccount(String accountNumber, String accountHolderName, double balance) {
-        this.accountNumber = accountHolderName;
+    public BankAccount(String accountNumber, String accountHolderName, double initialBalance) {
+        this.accountNumber = accountNumber;
         this.accountHolderName = accountHolderName;
-        this.balance = balance;
+        this.balance = initialBalance;
     }
 
     public String getAccountNumber() {
@@ -35,11 +35,12 @@ public class BankAccount {
             balance -= amount;
             System.out.println("Withdrew: $" + amount);
         } else {
-            System.out.println("Invalid withdrawl amount or insufficent funds.");
+            System.out.println("Invalid withdrawal amount or insufficient funds.");
         }
     }
 
+    @Override
     public String toString() {
-        return "Account Number: " + accountNumber + ", Account Holder: " + accountHolderName + ", Balance $" + balance;
+        return "Account Number: " + accountNumber + ", Account Holder: " + accountHolderName + ", Balance: $" + balance;
     }
 }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Bank {
     private ArrayList<BankAccount> accounts;
@@ -7,10 +8,10 @@ public class Bank {
         accounts = new ArrayList<>();
     }
 
-    public void createAccount(String accountNumber, String accountHolderName, double initalBalance) {
-        BankAccount newAccount = new BankAccount(accountNumber, accountHolderName, initalBalance);
+    public void createAccount(String accountNumber, String accountHolderName, double initialBalance) {
+        BankAccount newAccount = new BankAccount(accountNumber, accountHolderName, initialBalance);
         accounts.add(newAccount);
-        System.out.println("Account successfully created.");
+        System.out.println("Account created successfully.");
     }
 
     public BankAccount findAccount(String accountNumber) {
@@ -19,7 +20,7 @@ public class Bank {
                 return account;
             }
         }
-        return null; // account wasnt found
+        return null;
     }
 
     public void deposit(String accountNumber, double amount) {
